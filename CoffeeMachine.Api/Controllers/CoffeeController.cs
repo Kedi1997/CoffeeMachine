@@ -1,5 +1,6 @@
 using CoffeeMachine.Api.Exceptions;
 using CoffeeMachine.Api.Services.Coffee;
+using CoffeeMachine.Api.Services.Weather;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoffeeMachine.Api.Controllers;
@@ -16,7 +17,7 @@ public class CoffeeController : ControllerBase{
 
     [HttpGet]
     [Route("brew-coffee")]
-    public IActionResult BrewCoffee()
+    public async Task<IActionResult> BrewCoffee()
     {
         try
         {
